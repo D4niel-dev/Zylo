@@ -1,4 +1,4 @@
-const CACHE_NAME = 'zylo-site-v1';
+const CACHE_NAME = 'zylo-site-v2';
 const ASSETS = [
   './',
   './index.html',

@@ -56,6 +56,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    // FAQ Toggle
+    const faqToggle = document.getElementById('faq-toggle');
+    if (faqToggle) {
+        faqToggle.addEventListener('click', () => {
+            document.querySelectorAll('.faq-hidden').forEach(el => {
+                el.style.display = 'block';
+                // Small animation for reveal
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(10px)';
+                setTimeout(() => {
+                    el.style.transition = 'all 0.4s ease';
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, 10);
+            });
+            faqToggle.style.display = 'none';
+        });
+    }
 });
 
 // Register Service Worker

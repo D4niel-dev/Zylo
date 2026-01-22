@@ -1,29 +1,59 @@
-# Zylo Official Website
+# Zylo - The Ultimate Community Workspace
 
-This folder contains the source code for the Zylo official landing page.
+Welcome to the official repository for the Zylo landing page! This website showcases the features, performance, and community vibe of the Zylo platform.
 
-## Structure
+**Live Demo:** *Not yet available*
 
-- `index.html`: Main landing page structure
-- `css/`: Styling files
-  - `design-system.css`: Core variables and tokens
-  - `sections.css`: Layout for specific sections
-  - `components.css`: Reusable UI elements
-- `js/`: Interactivity
-  - `main.js`: UI logic (menus, copying)
-  - `animations.js`: Scroll and tilt effects
-- `assets/`: Images and icons
+## Features
 
-## Deployment (GitHub Pages)
+- **Modern & Responsive:** Built with a custom "Avant-Garde" design system (Glassmorphism, Neon gradients).
+- **Interactive Elements:**
+  - 3D Tilt effects on hover.
+  - Typewriter text animation.
+  - Interactive "Bento Grid" feature showcase.
+  - Horizontal testimonial slider with scroll-snap.
+- **Performance Optimized:**
+  - Lazy loading for images.
+  - Defer loading for scripts.
+  - Pure CSS animations.
+- **PWA Ready:** Includes `manifest.json` and Service Worker for installation capability.
+- **SEO Optimized:** Full Open Graph (OG) and Twitter Card tags.
 
-1. Go to your GitHub Repository Settings.
-2. Navigate to "Pages" on the sidebar.
-3. Under "Build and deployment" > "Source", select "Deploy from a branch".
-4. Under "Branch", select `main` (or your default branch) and the `/website` folder (if GitHub allows specific folder selection, otherwise you may need to move these files to root or `docs/` depending on your preference, or use a GitHub Action).
-   
-   *Note: If GitHub Pages only allows `/root` or `/docs`, you can rename this `website` folder to `docs` and select `/docs` in settings.*
+## Project Structure
 
-## Customization
+This project is hosted in the `/docs` folder to be compatible with GitHub Pages.
 
-- Change colors in `css/design-system.css`.
-- Add your own screenshots to `assets/images` and reference them in `index.html`.
+```
+/docs
+├── css/                # Design system and stylesheets
+├── js/                 # Logic and animations
+├── assets/             # Images and icons
+├── index.html          # Main landing page
+├── privacy.html        # Privacy Policy
+├── terms.html          # Terms of Service
+└── documentation.html  # User Documentation
+```
+
+## Local Development
+
+We've included handy scripts in the `scripts/` folder to make your life easier.
+
+### Running Locally
+To preview the site on your local machine:
+```bash
+# Windows
+.\scripts\dev_server.bat
+```
+This will start a Python HTTP server at `http://localhost:8000`.
+
+### Deployment
+To push changes to GitHub:
+```bash
+# Windows
+.\scripts\deploy.bat
+```
+
+## Credits
+
+Designed & Built with ❤️ by Daniel.
+Open Source under the MIT License.

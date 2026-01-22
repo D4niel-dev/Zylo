@@ -4,10 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zylo | The Ultimate Community Workspace</title>
-    <meta
-      name="description"
-      content="A modern, high-performance platform for communication, collaboration, and personal productivity."
-    />
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Zylo | The Ultimate Community Workspace">
+    <meta name="description" content="Zylo is a modern, high-performance community workspace. Chat, collaborate, and create with built-in AI, personal cloud, and deep customization. Self-hostable and open source.">
+    <meta name="keywords" content="Zylo, Community Workspace, Chat App, Open Source, Self-Hosted, AI Chat, Personal Cloud, Discord Alternative, Slack Alternative">
+    <meta name="author" content="Daniel">
+    <meta name="theme-color" content="#030712">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://d4niel-dev.github.io/Zylo-Beta-1.3.2/">
+    <meta property="og:title" content="Zylo | The Ultimate Community Workspace">
+    <meta property="og:description" content="Connect, create, and collaborate in a high-performance environment. Real-time chat, personal cloud, and AI tools—unified.">
+    <meta property="og:image" content="https://d4niel-dev.github.io/Zylo-Beta-1.3.2/assets/images/demo_community.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://d4niel-dev.github.io/Zylo-Beta-1.3.2/">
+    <meta property="twitter:title" content="Zylo | The Ultimate Community Workspace">
+    <meta property="twitter:description" content="Connect, create, and collaborate in a high-performance environment. Real-time chat, personal cloud, and AI tools—unified.">
+    <meta property="twitter:image" content="https://d4niel-dev.github.io/Zylo-Beta-1.3.2/assets/images/demo_community.png">
     
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="assets/icons/Zylo_icon.ico">
@@ -27,7 +44,7 @@
     <link rel="stylesheet" href="css/sections.css" />
     <link rel="stylesheet" href="css/components.css" />
 
-    <!-- FontAwesome for Icons (Temporary until custom SVGs) -->
+    <!-- FontAwesome for Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -61,7 +78,7 @@
           </a>
         </div>
 
-        <button class="mobile-menu-btn">
+        <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
@@ -104,10 +121,10 @@
               <div class="mockup-screen">
                 <!-- Screenshot Slideshow -->
                 <div class="slideshow-container">
-                    <img src="assets/images/demo_community.png" alt="Community Chat" class="slide active">
-                    <img src="assets/images/demo_moments.png" alt="Moments Feed" class="slide">
-                    <img src="assets/images/demo_profile.png" alt="User Profile" class="slide">
-                    <img src="assets/images/demo_cloud.png" alt="My Cloud" class="slide">
+                    <img src="assets/images/demo_community.png" alt="Community Chat" class="slide active"> <!-- Eager load first one -->
+                    <img src="assets/images/demo_moments.png" alt="Moments Feed" class="slide" loading="lazy">
+                    <img src="assets/images/demo_profile.png" alt="User Profile" class="slide" loading="lazy">
+                    <img src="assets/images/demo_cloud.png" alt="My Cloud" class="slide" loading="lazy">
                 </div>
               </div>
             </div>
@@ -189,13 +206,146 @@
                 <p>Built-in calculator, speed test, and notes.</p>
             </div>
 
-             <!-- 8. Gamification -->
+            <!-- 8. Gamification -->
             <div class="glass-card feature-card bento-card-md">
                 <div class="feature-icon">
                     <i class="fa-solid fa-trophy"></i>
                 </div>
                 <h3>XP & Leveling</h3>
                 <p>Earn XP by chatting and participating.</p>
+            </div>
+
+            <!-- 9. Open Source (New - Fills gap) -->
+            <div class="glass-card feature-card bento-card-lg">
+                <div class="feature-icon">
+                    <i class="fa-brands fa-github"></i>
+                </div>
+                <h3>100% Open Source</h3>
+                <p>Audit the code, contribute features, or fork it. Built by the community, for the community.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="testimonials-section">
+        <div class="container">
+          <div class="section-header text-center">
+            <h2 class="section-title">Community Vibes</h2>
+            <p class="section-desc">
+              Join the thousands who have switched to a quieter, faster workspace.
+            </p>
+          </div>
+
+          <div class="testimonials-track">
+            <!-- Review 1 -->
+            <div class="glass-card testimonial-card">
+              <div class="testimonial-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="testimonial-text">
+                "Finally, a chat app that doesn't feel like a casino. The focus on
+                performance and privacy is exactly what I've been waiting for."
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar gradient-1">SJ</div>
+                <div class="author-info">
+                  <span class="author-name">Sarah Jenkins</span>
+                  <span class="author-role">Software Engineer</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="glass-card testimonial-card">
+              <div class="testimonial-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="testimonial-text">
+                "The self-hosting capability is a game changer properly done.
+                Setup was trivial, and now I own my data completely."
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar gradient-2">MK</div>
+                <div class="author-info">
+                  <span class="author-name">Marcus King</span>
+                  <span class="author-role">Privacy Advocate</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="glass-card testimonial-card">
+              <div class="testimonial-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </div>
+              <p class="testimonial-text">
+                "Zylo feels 'alive'. The UI animations are subtle but adding so
+                much character. It's just fun to use every day."
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar gradient-3">EL</div>
+                <div class="author-info">
+                  <span class="author-name">Elena Li</span>
+                  <span class="author-role">UX Designer</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review 4 -->
+            <div class="glass-card testimonial-card">
+              <div class="testimonial-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="testimonial-text">
+                "The built-in AI assistant is actually useful, not just a
+                gimmick. Helping me debug code right in the chat is killer."
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar gradient-1">DT</div>
+                <div class="author-info">
+                  <span class="author-name">David Torres</span>
+                  <span class="author-role">Full Stack Dev</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review 5 -->
+            <div class="glass-card testimonial-card">
+              <div class="testimonial-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="testimonial-text">
+                "Simple, fast, and beautiful. The theming engine is incredibly
+                detailed. I've never seen a chat app look this good."
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar gradient-2">KA</div>
+                <div class="author-info">
+                  <span class="author-name">Kiera Allen</span>
+                  <span class="author-role">Visual Artist</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -266,25 +416,51 @@
                 </div>
             </div>
 
-            <!-- FAQ Section (New) -->
+            <!-- FAQ Section -->
             <div class="faq-section container" style="margin-top: var(--space-16);">
                 <div class="section-header text-center">
                     <h2 class="section-title">FAQ</h2>
                     <p class="section-desc">Common questions about the community workspace.</p>
                 </div>
                 <div class="faq-grid" style="max-width: 800px; margin: 0 auto; display: grid; gap: var(--space-4);">
+                    <!-- Item 1 -->
                     <div class="glass-card" style="padding: var(--space-4);">
                         <h4 style="color: white; margin-bottom: var(--space-2);">Is Zylo completely free?</h4>
                         <p style="color: var(--color-text-secondary);">Yes! Zylo is open source and free to use. You can host it yourself.</p>
                     </div>
+                    <!-- Item 2 -->
                     <div class="glass-card" style="padding: var(--space-4);">
                         <h4 style="color: white; margin-bottom: var(--space-2);">Does it work on Mobile?</h4>
                         <p style="color: var(--color-text-secondary);">Yes, Zylo supports Pydroid 3 and Pyramid for mobile usage.</p>
                     </div>
+                    <!-- Item 3 -->
                     <div class="glass-card" style="padding: var(--space-4);">
                         <h4 style="color: white; margin-bottom: var(--space-2);">Where is data stored?</h4>
                         <p style="color: var(--color-text-secondary);">On your own server/machine. We do not track you or store your data.</p>
                     </div>
+                    <!-- Item 4 -->
+                    <div class="glass-card" style="padding: var(--space-4);">
+                        <h4 style="color: white; margin-bottom: var(--space-2);">How do I customize themes?</h4>
+                        <p style="color: var(--color-text-secondary);">Use the built-in theme editor or edit the CSS variables directly for advanced control.</p>
+                    </div>
+
+                    <!-- Hidden Items -->
+                    <div class="glass-card faq-hidden" style="padding: var(--space-4);">
+                        <h4 style="color: white; margin-bottom: var(--space-2);">Is the AI processed locally?</h4>
+                        <p style="color: var(--color-text-secondary);">No, Gemini personas require an internet connection, but your chat logs remain on your server.</p>
+                    </div>
+                    <div class="glass-card faq-hidden" style="padding: var(--space-4);">
+                        <h4 style="color: white; margin-bottom: var(--space-2);">Can I create my own bots?</h4>
+                        <p style="color: var(--color-text-secondary);">Yes, the API allows for custom bot integrations and automated workflows.</p>
+                    </div>
+                    <div class="glass-card faq-hidden" style="padding: var(--space-4);">
+                        <h4 style="color: white; margin-bottom: var(--space-2);">Is it secure?</h4>
+                        <p style="color: var(--color-text-secondary);">Zylo uses local-first architecture and encrypted sessions for maximum security.</p>
+                    </div>
+                </div>
+
+                <div class="text-center" style="margin-top: var(--space-6);">
+                    <button id="faq-toggle" class="btn btn-outline btn-sm">Show More</button>
                 </div>
             </div>
         </div>
@@ -295,13 +471,24 @@
         <div class="container">
           <div class="cta-card glass-card">
             <div class="cta-content">
-              <h2>Ready to launch?</h2>
+              <h2>Ready to launch ?</h2>
               <p>Open source, free forever, and built for performance.</p>
               <div class="code-block">
+              <div class="code-content">
                 <code id="typewriter-text"></code><span class="cursor">|</span>
-                <button class="copy-btn">
+              </div>
+                <button class="copy-btn" aria-label="Copy install command">
                   <i class="fa-regular fa-copy"></i>
                 </button>
+              </div>
+
+              <div class="cta-extras" style="margin-top: var(--space-6); display: flex; flex-direction: column; align-items: center; gap: var(--space-4);">
+                  <div class="os-icons" style="display: flex; gap: var(--space-4); color: var(--color-text-muted); font-size: 1.5rem;">
+                      <i class="fa-brands fa-windows" title="Windows"></i>
+                      <i class="fa-brands fa-linux" title="Linux"></i>
+                      <i class="fa-brands fa-apple" title="macOS"></i>
+                  </div>
+                  <a href="documentation.html" class="btn btn-outline btn-sm">Read Documentation</a>
               </div>
             </div>
           </div>
@@ -315,15 +502,16 @@
         <div class="footer-bottom">
           <p>&copy; 2026 Zylo. Built with ❤️ by Daniel.</p>
           <div class="footer-links">
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
+            <a href="privacy.html">Privacy</a>
+            <span style="color: rgba(255,255,255,0.2);">|</span>
+            <a href="terms.html">Terms</a>
           </div>
         </div>
       </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="js/main.js"></script>
-    <script src="js/animations.js"></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/animations.js" defer></script>
   </body>
 </html>
