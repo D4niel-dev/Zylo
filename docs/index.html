@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zylo | The Ultimate Community Workspace</title>
+    <meta
+      name="description"
+      content="A modern, high-performance platform for communication, collaboration, and personal productivity."
+    />
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/Zylo_icon.ico">
+    <link rel="icon" type="image/png" href="assets/icons/Zylo_icon.png">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/design-system.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+    <link rel="stylesheet" href="css/components.css" />
+
+    <!-- FontAwesome for Icons (Temporary until custom SVGs) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Background Elements -->
+    <div class="fixed-background">
+      <div class="glow-orb orb-1"></div>
+      <div class="glow-orb orb-2"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar glass-card">
+      <div class="container nav-container">
+        <a href="#" class="logo">
+          <span class="logo-icon">⚡</span>
+          <span class="logo-text">Zylo</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#stats">Stats</a>
+          <a href="#download">Download</a>
+          <a
+            href="https://github.com/D4niel-dev/Zylo-Beta-1.3.2"
+            target="_blank"
+            class="btn btn-sm btn-outline"
+          >
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+        </div>
+
+        <button class="mobile-menu-btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero-section">
+        <div class="container hero-container">
+          <div class="hero-content">
+            <div class="badge-pill">
+              <span class="badge-dot"></span>
+              v1.3.2 Visual Polish Update
+            </div>
+            <h1 class="hero-title">
+              The Ultimate <br />
+              <span class="text-gradient">Community Workspace</span>
+            </h1>
+            <p class="hero-subtitle">
+              Connect, create, and collaborate in a high-performance
+              environment. Real-time chat, personal cloud, and AI tools—unified.
+            </p>
+            <div class="hero-actions">
+              <a href="#download" class="btn btn-primary btn-lg btn-glow">
+                <i class="fa-solid fa-download"></i> Get Started
+              </a>
+              <a href="#features" class="btn btn-glass btn-lg">
+                Explore Features
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="app-mockup glass-card tilt-element">
+              <div class="mockup-header">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+              </div>
+              <div class="mockup-screen">
+                <!-- Screenshot Slideshow -->
+                <div class="slideshow-container">
+                    <img src="assets/images/demo_community.png" alt="Community Chat" class="slide active">
+                    <img src="assets/images/demo_moments.png" alt="Moments Feed" class="slide">
+                    <img src="assets/images/demo_profile.png" alt="User Profile" class="slide">
+                    <img src="assets/images/demo_cloud.png" alt="My Cloud" class="slide">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section (Bento Grid) -->
+      <section id="features" class="features-section">
+        <div class="container">
+          <div class="section-header text-center">
+            <h2 class="section-title">Everything you need</h2>
+            <p class="section-desc">
+              More than just a chat app. A complete productivity ecosystem.
+            </p>
+          </div>
+
+          <div class="bento-grid">
+            <!-- 1. Real-time Communication (Large) -->
+            <div class="glass-card feature-card bento-card-lg">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-comments"></i>
+                </div>
+                <h3>Real-time Communication</h3>
+                <p>High-speed group chats and Direct Messages with ultra-low latency. Powered by Flask-SocketIO.</p>
+            </div>
+
+            <!-- 2. My Cloud -->
+            <div class="glass-card feature-card bento-card-md">
+                <div class="feature-icon">
+                     <i class="fa-solid fa-cloud"></i>
+                </div>
+                <h3>My Cloud</h3>
+                <p>500MB personal secure storage for your files.</p>
+            </div>
+
+            <!-- 3. Moments -->
+            <div class="glass-card feature-card bento-card-md">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-camera-retro"></i>
+                </div>
+                <h3>Moments</h3>
+                <p>Share life's highlights in a dedicated social feed.</p>
+            </div>
+
+            <!-- 4. AI Integration (Large) -->
+            <div class="glass-card feature-card bento-card-lg">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <h3>AI Assistant Included</h3>
+                <p>Chat with multiple AI personas (Gemini) directly in your workspace. Get help, code snippets, or just chat.</p>
+            </div>
+
+            <!-- 5. Customization -->
+            <div class="glass-card feature-card bento-card-md">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-palette"></i>
+                </div>
+                <h3>Deep Theming</h3>
+                <p>Customize everything. Profile effects, banners, and UI themes.</p>
+            </div>
+
+            <!-- 6. Security -->
+            <div class="glass-card feature-card bento-card-md">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3>Private & Secure</h3>
+                <p>Local-first architecture with encrypted sessions.</p>
+            </div>
+            
+             <!-- 7. Power Tools -->
+            <div class="glass-card feature-card bento-card-md">
+                <div class="feature-icon">
+                   <i class="fa-solid fa-screwdriver-wrench"></i>
+                </div>
+                <h3>Power Tools</h3>
+                <p>Built-in calculator, speed test, and notes.</p>
+            </div>
+
+             <!-- 8. Gamification -->
+            <div class="glass-card feature-card bento-card-md">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-trophy"></i>
+                </div>
+                <h3>XP & Leveling</h3>
+                <p>Earn XP by chatting and participating.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats/Social Proof -->
+      <section id="stats" class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item text-center">
+                    <h3 class="text-gradient display-text">v1.3.2</h3>
+                    <p>Current Release</p>
+                </div>
+                <div class="stat-item text-center">
+                    <h3 class="text-gradient display-text">99+</h3>
+                    <p>Commits</p>
+                </div>
+                <div class="stat-item text-center">
+                    <h3 class="text-gradient display-text">MIT</h3>
+                    <p>Open Source License</p>
+                </div>
+            </div>
+
+            <!-- Comparison Section (New) -->
+            <div class="comparison-section container" style="margin-top: var(--space-16);">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Why Zylo?</h2>
+                    <p class="section-desc">Built for those who want control.</p>
+                </div>
+                
+                <div class="glass-card" style="padding: var(--space-6); overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left; color: var(--color-text-secondary);">
+                        <thead>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <th style="padding: var(--space-4); color: white;">Feature</th>
+                                <th style="padding: var(--space-4); color: var(--color-accent);">Zylo</th>
+                                <th style="padding: var(--space-4);">Discord</th>
+                                <th style="padding: var(--space-4);">Slack</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: var(--space-4); color: white;">Self-Hosted</td>
+                                <td style="padding: var(--space-4); color: var(--color-accent);"><i class="fa-solid fa-check"></i></td>
+                                <td style="padding: var(--space-4);"><i class="fa-solid fa-xmark"></i></td>
+                                <td style="padding: var(--space-4);"><i class="fa-solid fa-xmark"></i></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: var(--space-4); color: white;">Personal Cloud (500MB)</td>
+                                <td style="padding: var(--space-4); color: var(--color-accent);"><i class="fa-solid fa-check"></i></td>
+                                <td style="padding: var(--space-4);"><i class="fa-solid fa-xmark"></i></td>
+                                <td style="padding: var(--space-4);"><i class="fa-solid fa-xmark"></i></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: var(--space-4); color: white;">AI Integration</td>
+                                <td style="padding: var(--space-4); color: var(--color-accent);"><i class="fa-solid fa-check"></i> Built-in</td>
+                                <td style="padding: var(--space-4);">Bot required</td>
+                                <td style="padding: var(--space-4);">Add-on</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: var(--space-4); color: white;">Gamification (XP)</td>
+                                <td style="padding: var(--space-4); color: var(--color-accent);"><i class="fa-solid fa-check"></i></td>
+                                <td style="padding: var(--space-4);">Bot required</td>
+                                <td style="padding: var(--space-4);"><i class="fa-solid fa-xmark"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- FAQ Section (New) -->
+            <div class="faq-section container" style="margin-top: var(--space-16);">
+                <div class="section-header text-center">
+                    <h2 class="section-title">FAQ</h2>
+                    <p class="section-desc">Common questions about the community workspace.</p>
+                </div>
+                <div class="faq-grid" style="max-width: 800px; margin: 0 auto; display: grid; gap: var(--space-4);">
+                    <div class="glass-card" style="padding: var(--space-4);">
+                        <h4 style="color: white; margin-bottom: var(--space-2);">Is Zylo completely free?</h4>
+                        <p style="color: var(--color-text-secondary);">Yes! Zylo is open source and free to use. You can host it yourself.</p>
+                    </div>
+                    <div class="glass-card" style="padding: var(--space-4);">
+                        <h4 style="color: white; margin-bottom: var(--space-2);">Does it work on Mobile?</h4>
+                        <p style="color: var(--color-text-secondary);">Yes, Zylo supports Pydroid 3 and Pyramid for mobile usage.</p>
+                    </div>
+                    <div class="glass-card" style="padding: var(--space-4);">
+                        <h4 style="color: white; margin-bottom: var(--space-2);">Where is data stored?</h4>
+                        <p style="color: var(--color-text-secondary);">On your own server/machine. We do not track you or store your data.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- Download CTA -->
+      <section id="download" class="cta-section">
+        <div class="container">
+          <div class="cta-card glass-card">
+            <div class="cta-content">
+              <h2>Ready to launch?</h2>
+              <p>Open source, free forever, and built for performance.</p>
+              <div class="code-block">
+                <code id="typewriter-text"></code><span class="cursor">|</span>
+                <button class="copy-btn">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <p>&copy; 2026 Zylo. Built with ❤️ by Daniel.</p>
+          <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+  </body>
+</html>

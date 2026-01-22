@@ -1,0 +1,20 @@
+{
+  "name": "Zylo - Community Workspace",
+  "short_name": "Zylo",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#030712",
+  "theme_color": "#030712",
+  "icons": [
+    {
+      "src": "assets/icons/Zylo_icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/Zylo_icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
