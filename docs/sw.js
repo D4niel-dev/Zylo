@@ -2,6 +2,9 @@ const CACHE_NAME = 'zylo-site-v2';
 const ASSETS = [
   './',
   './index.html',
+  './documentation.html',
+  './privacy.html',
+  './terms.html',
   './css/design-system.css',
   './css/sections.css',
   './css/components.css',
