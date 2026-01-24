@@ -8,10 +8,11 @@ Welcome to the official repository for the Zylo landing page! This website showc
 
 - **Modern & Responsive:** Built with a custom "Avant-Garde" design system (Glassmorphism, Neon gradients).
 - **Interactive Elements:**
-  - 3D Tilt effects on hover.
-  - Typewriter text animation.
-  - Interactive "Bento Grid" feature showcase.
-  - Horizontal testimonial slider with scroll-snap.
+  - **Smart OS Modal:** Auto-detects OS or allows manual selection with click-to-copy commands.
+  - **Enhanced Slideshow:** Glass reflection overlay and interactive navigation.
+  - **3D Tilt effects:** On hover for mockup elements.
+  - **Responsive Comparison Table:** Horizontal scrolling support for mobile.
+  - **Typewriter Text:** Dynamic text animation for command prompts.
 - **Performance Optimized:**
   - Lazy loading for images.
   - Defer loading for scripts.
