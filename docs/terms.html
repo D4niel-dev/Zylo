@@ -20,18 +20,26 @@
     <div class="fixed-background">
       <div class="glow-orb orb-1"></div>
       <div class="glow-orb orb-2"></div>
+      <div class="glow-orb orb-3"></div>
     </div>
 
     <nav class="navbar glass-card">
       <div class="container nav-container">
         <a href="index.html" class="logo">
-          <span class="logo-icon">⚡</span>
+          <img src="assets/icons/Zylo_icon.png" alt="Zylo Logo" class="logo-img">
           <span class="logo-text">Zylo</span>
         </a>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="documentation.html">Docs</a>
+            <button id="theme-toggle" class="btn btn-sm btn-outline" aria-label="Toggle Dark/Light Mode">
+                <i class="fa-solid fa-sun"></i>
+            </button>
         </div>
+        
+        <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
     </nav>
 
@@ -40,22 +48,22 @@
         <h1 class="text-gradient" style="font-size: var(--text-4xl); font-weight: 800; margin-bottom: var(--space-6);">Terms of Service</h1>
         
         <div style="color: var(--color-text-secondary); line-height: 1.8;">
-          <h2 style="color: white; margin: var(--space-6) 0 var(--space-2);">1. Introduction</h2>
+          <h2 style="color: var(--color-text-primary); margin: var(--space-6) 0 var(--space-2);">1. Introduction</h2>
           <p style="margin-bottom: var(--space-4);">
             By downloading, installing, or using Zylo, you agree to these terms. Zylo is open-source software provided "as is", without warranty of any kind.
           </p>
 
-          <h2 style="color: white; margin: var(--space-6) 0 var(--space-2);">2. Usage License</h2>
+          <h2 style="color: var(--color-text-primary); margin: var(--space-6) 0 var(--space-2);">2. Usage License</h2>
           <p style="margin-bottom: var(--space-4);">
             Zylo is released under the MIT License. You are free to use, modify, and distribute this software in compliance with the MIT License terms.
           </p>
 
-          <h2 style="color: white; margin: var(--space-6) 0 var(--space-2);">3. User Responsibilities</h2>
+          <h2 style="color: var(--color-text-primary); margin: var(--space-6) 0 var(--space-2);">3. User Responsibilities</h2>
           <p style="margin-bottom: var(--space-4);">
             As a self-hosted platform, you are responsible for maintaining your own server security, data backups, and ensuring your usage complies with local laws and regulations.
           </p>
 
-          <h2 style="color: white; margin: var(--space-6) 0 var(--space-2);">4. Limitation of Liability</h2>
+          <h2 style="color: var(--color-text-primary); margin: var(--space-6) 0 var(--space-2);">4. Limitation of Liability</h2>
           <p style="margin-bottom: var(--space-4);">
             In no event shall the authors or copyright holders be liable for any claim, damages, or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.
           </p>
@@ -66,14 +74,28 @@
     <footer class="site-footer">
       <div class="container">
         <div class="footer-bottom">
-          <p>&copy; 2026 Zylo.</p>
+          <div class="footer-text">
+              <span class="footer-copyright">&copy; 2026 Zylo.</span>
+              <span class="footer-credits">Built with ❤️ by <a href="https://github.com/D4niel-dev" target="_blank" rel="noopener">Daniel</a>.</span>
+          </div>
           <div class="footer-links">
             <a href="privacy.html">Privacy</a>
-            <span style="color: rgba(255,255,255,0.2);">|</span>
-            <a href="terms.html" style="color: white;">Terms</a>
+            <span class="footer-separator">|</span>
+            <a href="terms.html" aria-current="page">Terms</a>
           </div>
         </div>
       </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script>
+      // Immediate theme application to prevent flash
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    </script>
   </body>
 </html>

@@ -5,53 +5,58 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (mobileMenuBtn) {
         mobileMenuBtn.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.background = 'rgba(15, 23, 42, 0.95)';
-                navLinks.style.backdropFilter = 'blur(10px)';
-                navLinks.style.padding = '1rem';
-                navLinks.style.borderRadius = '0 0 var(--radius-lg) var(--radius-lg)';
+            navLinks.classList.toggle('active');
+            
+            // Toggle Icon
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
             }
         });
     }
 
-    // Copy to Clipboard
-    const copyBtn = document.querySelector('.copy-btn');
-    const codeElement = document.querySelector('code');
-
-    if (copyBtn && codeElement) {
-        copyBtn.addEventListener('click', () => {
-             const textToCopy = codeElement.textContent.replace('git clone ', '').trim(); // Clean up if needed, or copy full
-             navigator.clipboard.writeText(codeElement.textContent).then(() => {
-                 const originalIcon = copyBtn.innerHTML;
-                 copyBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
-                 copyBtn.style.color = '#4ade80';
-                 
-                 setTimeout(() => {
-                     copyBtn.innerHTML = originalIcon;
-                     copyBtn.style.color = '';
-                 }, 2000);
-             });
+    // Dropdown Click Toggle for Mobile
+    const dropdownTriggers = document.querySelectorAll('.dropdown > a');
+    dropdownTriggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            // Only toggle on small screens (mobile)
+            if (window.innerWidth <= 768) {
+                e.preventDefault(); // Stop the link from navigating
+                const dropdown = trigger.closest('.dropdown');
+                dropdown.classList.toggle('open');
+            }
         });
-    }
+    });
+
+
 
     // Smooth Scroll for Anchors
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            // Guard against invalid selectors (e.g., just "#" or empty)
+            if (!href || href === '#' || href.length < 2) {
+                return; // Do nothing for invalid hrefs
+            }
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector(href);
             if (target) {
                 target.scrollIntoView({
                     behavior: 'smooth'
                 });
-                // Close mobile menu if open
+                // Close mobile menu if open (using class-based toggle)
                 if (window.innerWidth <= 768) {
-                    navLinks.style.display = 'none';
+                    navLinks.classList.remove('active');
+                    // Reset hamburger icon
+                    const icon = mobileMenuBtn ? mobileMenuBtn.querySelector('i') : null;
+                    if (icon) {
+                        icon.classList.remove('fa-xmark');
+                        icon.classList.add('fa-bars');
+                    }
                 }
             }
         });
@@ -72,6 +77,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 10);
             });
             faqToggle.style.display = 'none';
+        });
+    }
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
+    const icon = themeToggle ? themeToggle.querySelector('i') : null;
+
+    // Check saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        htmlEl.setAttribute('data-theme', 'light');
+        if (icon) {
+             icon.classList.remove('fa-sun');
+             icon.classList.add('fa-moon');
+        }
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlEl.getAttribute('data-theme');
+            if (currentTheme === 'light') {
+                htmlEl.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                htmlEl.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
         });
     }
 });
@@ -134,4 +170,108 @@ if (typeText) {
 
     type();
 }
+
+// OS Selector Modal Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const modalOverlay = document.getElementById('os-modal-overlay');
+    const triggerBox = document.getElementById('install-trigger');
+    const iconTriggers = document.querySelectorAll('.os-icon-trigger');
+    const closeBtn = document.querySelector('.close-modal-btn');
+    const osBtns = document.querySelectorAll('.os-btn');
+    const modalCmd = document.getElementById('modal-cmd');
+    
+    // Commands
+    const commands = {
+        windows: `git clone https://github.com/D4niel-dev/Zylo-Beta-1.3.2
+cd Zylo-Beta-1.3.2
+pip install -r requirements.txt
+python main.pyw`,
+        mac: `git clone https://github.com/D4niel-dev/Zylo-Beta-1.3.2
+cd Zylo-Beta-1.3.2
+pip install -r requirements.txt
+python3 main.pyw`,
+        linux: `git clone https://github.com/D4niel-dev/Zylo-Beta-1.3.2
+cd Zylo-Beta-1.3.2
+pip install -r requirements.txt
+python3 main.pyw`
+    };
+
+    function openModal(defaultOS = 'windows') {
+        if (!modalOverlay) return;
+        
+        // Set active OS button
+        osBtns.forEach(btn => {
+            if (btn.dataset.os === defaultOS) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+        
+        // Set command
+        if (modalCmd) modalCmd.textContent = commands[defaultOS];
+        
+        modalOverlay.classList.add('open');
+    }
+
+    function closeModal() {
+        if (modalOverlay) modalOverlay.classList.remove('open');
+    }
+
+    if (triggerBox) {
+        triggerBox.addEventListener('click', () => openModal('windows'));
+    }
+
+    iconTriggers.forEach(icon => {
+        icon.addEventListener('click', (e) => {
+            e.stopPropagation(); 
+            openModal(icon.dataset.os);
+        });
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    
+    // Close on outside click
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) closeModal();
+        });
+    }
+
+    // OS Button Selection
+    osBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active state
+            osBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            // Update command
+            const os = btn.dataset.os;
+            if (modalCmd) {
+                modalCmd.textContent = commands[os];
+            }
+        });
+    });
+
+
+
+
+
+    // Copy inside modal (Click on text)
+    if (modalCmd) {
+        modalCmd.addEventListener('click', () => {
+             const textToCopy = modalCmd.textContent;
+             navigator.clipboard.writeText(textToCopy).then(() => {
+                 // visual feedback
+                 modalCmd.classList.add('success');
+                 
+                 setTimeout(() => {
+                     modalCmd.classList.remove('success');
+                 }, 2000);
+             }).catch(err => {
+                 console.error('Failed to copy!', err);
+             });
+        });
+    }
+});
 

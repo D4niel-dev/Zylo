@@ -4,62 +4,135 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Privacy Policy | Zylo</title>
-    <meta name="description" content="Zylo Privacy Policy - We respect your data." />
-    
-    <link rel="icon" type="image/x-icon" href="assets/icons/Zylo_icon.ico">
-    <link rel="icon" type="image/png" href="assets/icons/Zylo_icon.png">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    
+    <meta
+      name="description"
+      content="Zylo Privacy Policy - We respect your data."
+    />
+
+    <link rel="icon" type="image/x-icon" href="assets/icons/Zylo_icon.ico" />
+    <link rel="icon" type="image/png" href="assets/icons/Zylo_icon.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="css/design-system.css" />
     <link rel="stylesheet" href="css/sections.css" />
     <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body>
     <div class="fixed-background">
       <div class="glow-orb orb-1"></div>
       <div class="glow-orb orb-2"></div>
+      <div class="glow-orb orb-3"></div>
     </div>
 
     <nav class="navbar glass-card">
       <div class="container nav-container">
         <a href="index.html" class="logo">
-          <span class="logo-icon">⚡</span>
+          <img src="assets/icons/Zylo_icon.png" alt="Zylo Logo" class="logo-img">
           <span class="logo-text">Zylo</span>
         </a>
         <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="documentation.html">Docs</a>
+          <a href="index.html">Home</a>
+          <a href="documentation.html">Docs</a>
+          <button
+            id="theme-toggle"
+            class="btn btn-sm btn-outline"
+            aria-label="Toggle Dark/Light Mode"
+          >
+            <i class="fa-solid fa-sun"></i>
+          </button>
         </div>
+
+        <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
     </nav>
 
-    <main class="container" style="padding-top: 120px; padding-bottom: 60px;">
-      <div class="glass-card" style="padding: var(--space-8); max-width: 800px; margin: 0 auto;">
-        <h1 class="text-gradient" style="font-size: var(--text-4xl); font-weight: 800; margin-bottom: var(--space-6);">Privacy Policy</h1>
-        
-        <div style="color: var(--color-text-secondary); line-height: 1.8;">
-          <p style="margin-bottom: var(--space-4);">Last updated: January 2026</p>
+    <main class="container" style="padding-top: 120px; padding-bottom: 60px">
+      <div
+        class="glass-card"
+        style="padding: var(--space-8); max-width: 800px; margin: 0 auto"
+      >
+        <h1
+          class="text-gradient"
+          style="
+            font-size: var(--text-4xl);
+            font-weight: 800;
+            margin-bottom: var(--space-6);
+          "
+        >
+          Privacy Policy
+        </h1>
 
-          <h2 style="color: white; margin: var(--space-6) 0 var(--space-2);">1. Overview</h2>
-          <p style="margin-bottom: var(--space-4);">
-            Zylo is a self-hosted platform. This means <strong>YOU</strong> own your data. When you host Zylo on your own server or machine, no data is sent to us (the developers). You are the controller and processor of your own information.
+        <div style="color: var(--color-text-secondary); line-height: 1.8">
+          <p style="margin-bottom: var(--space-4)">
+            Last updated: January 2026
           </p>
 
-          <h2 style="color: white; margin: var(--space-6) 0 var(--space-2);">2. Data Collection</h2>
-          <p style="margin-bottom: var(--space-4);">
-            We do not track, collect, or sell your personal information. The official Zylo website (this landing page) may use standard analytics for performance monitoring, but the Zylo application itself is completely private when self-hosted.
+          <h2
+            style="
+              color: var(--color-text-primary);
+              margin: var(--space-6) 0 var(--space-2);
+            "
+          >
+            1. Overview
+          </h2>
+          <p style="margin-bottom: var(--space-4)">
+            Zylo is a self-hosted platform. This means <strong>YOU</strong> own
+            your data. When you host Zylo on your own server or machine, no data
+            is sent to us (the developers). You are the controller and processor
+            of your own information.
           </p>
 
-          <h2 style="color: white; margin: var(--space-6) 0 var(--space-2);">3. AI Features</h2>
-          <p style="margin-bottom: var(--space-4);">
-            If you choose to use the Gemini AI integration, your chat queries are sent to Google's API as per your personal API key configuration. This interaction is subject to Google's Terms of Service and Privacy Policy. Zylo acts only as a client interface.
+          <h2
+            style="
+              color: var(--color-text-primary);
+              margin: var(--space-6) 0 var(--space-2);
+            "
+          >
+            2. Data Collection
+          </h2>
+          <p style="margin-bottom: var(--space-4)">
+            We do not track, collect, or sell your personal information. The
+            official Zylo website (this landing page) may use standard analytics
+            for performance monitoring, but the Zylo application itself is
+            completely private when self-hosted.
           </p>
 
-          <h2 style="color: white; margin: var(--space-6) 0 var(--space-2);">4. Contact</h2>
-          <p style="margin-bottom: var(--space-4);">
-            For any questions regarding this policy, please open an issue on our GitHub repository.
+          <h2
+            style="
+              color: var(--color-text-primary);
+              margin: var(--space-6) 0 var(--space-2);
+            "
+          >
+            3. AI Features
+          </h2>
+          <p style="margin-bottom: var(--space-4)">
+            If you choose to use the Gemini AI integration, your chat queries
+            are sent to Google's API as per your personal API key configuration.
+            This interaction is subject to Google's Terms of Service and Privacy
+            Policy. Zylo acts only as a client interface.
+          </p>
+
+          <h2
+            style="
+              color: var(--color-text-primary);
+              margin: var(--space-6) 0 var(--space-2);
+            "
+          >
+            4. Contact
+          </h2>
+          <p style="margin-bottom: var(--space-4)">
+            For any questions regarding this policy, please open an issue on our
+            GitHub repository.
           </p>
         </div>
       </div>
@@ -68,14 +141,28 @@
     <footer class="site-footer">
       <div class="container">
         <div class="footer-bottom">
-          <p>&copy; 2026 Zylo.</p>
+          <div class="footer-text">
+              <span class="footer-copyright">&copy; 2026 Zylo.</span>
+              <span class="footer-credits">Built with ❤️ by <a href="https://github.com/D4niel-dev" target="_blank" rel="noopener">Daniel</a>.</span>
+          </div>
           <div class="footer-links">
-            <a href="privacy.html">Privacy</a>
-            <span style="color: rgba(255,255,255,0.2);">|</span>
+            <a href="privacy.html" aria-current="page">Privacy</a>
+            <span class="footer-separator">|</span>
             <a href="terms.html">Terms</a>
           </div>
         </div>
       </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script>
+      // Immediate theme application to prevent flash
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    </script>
   </body>
 </html>

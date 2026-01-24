@@ -55,19 +55,32 @@
     <div class="fixed-background">
       <div class="glow-orb orb-1"></div>
       <div class="glow-orb orb-2"></div>
+      <div class="glow-orb orb-3"></div>
     </div>
 
     <!-- Navigation -->
     <nav class="navbar glass-card">
       <div class="container nav-container">
         <a href="#" class="logo">
-          <span class="logo-icon">⚡</span>
+          <img src="assets/icons/Zylo_icon.png" alt="Zylo Logo" class="logo-img">
           <span class="logo-text">Zylo</span>
         </a>
 
         <div class="nav-links">
-          <a href="#features">Features</a>
-          <a href="#stats">Stats</a>
+          <div class="dropdown">
+            <a style="cursor: default;">Features <i class="fa-solid fa-chevron-down" style="font-size: 0.7em; margin-left: 4px; opacity: 0.7;"></i></a>
+            <div class="dropdown-menu">
+                <a href="#features" class="dropdown-item">
+                    <i class="fa-solid fa-layer-group"></i> All Features
+                </a>
+                <a href="#testimonials" class="dropdown-item">
+                    <i class="fa-solid fa-comments"></i> Community
+                </a>
+                <a href="#stats" class="dropdown-item">
+                    <i class="fa-solid fa-chart-line"></i> Statistics
+                </a>
+            </div>
+          </div>
           <a href="#download">Download</a>
           <a
             href="https://github.com/D4niel-dev/Zylo-Beta-1.3.2"
@@ -76,6 +89,9 @@
           >
             <i class="fa-brands fa-github"></i> GitHub
           </a>
+          <button id="theme-toggle" class="btn btn-sm btn-outline" aria-label="Toggle Dark/Light Mode">
+             <i class="fa-solid fa-sun"></i>
+          </button>
         </div>
 
         <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
@@ -99,7 +115,7 @@
             </h1>
             <p class="hero-subtitle">
               Connect, create, and collaborate in a high-performance
-              environment. Real-time chat, personal cloud, and AI tools—unified.
+              environment. Perfect for communities, teams, and developers who value privacy and control.
             </p>
             <div class="hero-actions">
               <a href="#download" class="btn btn-primary btn-lg btn-glow">
@@ -119,12 +135,27 @@
                 <div class="dot green"></div>
               </div>
               <div class="mockup-screen">
+                <!-- Screen Overlay (Reflection/Scanlines) -->
+                <div class="screen-overlay"></div>
+                
                 <!-- Screenshot Slideshow -->
                 <div class="slideshow-container">
                     <img src="assets/images/demo_community.png" alt="Community Chat" class="slide active"> <!-- Eager load first one -->
                     <img src="assets/images/demo_moments.png" alt="Moments Feed" class="slide" loading="lazy">
                     <img src="assets/images/demo_profile.png" alt="User Profile" class="slide" loading="lazy">
                     <img src="assets/images/demo_cloud.png" alt="My Cloud" class="slide" loading="lazy">
+                </div>
+                
+                <!-- Indicators -->
+                <div class="slideshow-indicators">
+                    <div class="indicator active" data-index="0"></div>
+                    <div class="indicator" data-index="1"></div>
+                    <div class="indicator" data-index="2"></div>
+                    <div class="indicator" data-index="3"></div>
+                </div>
+
+                <div class="slideshow-caption text-center" style="margin-top: var(--space-4); color: var(--color-text-secondary); font-size: var(--text-sm); font-weight: 500;">
+                    Community Chat
                 </div>
               </div>
             </div>
@@ -224,6 +255,21 @@
                 <p>Audit the code, contribute features, or fork it. Built by the community, for the community.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- Tech Stack Section -->
+      <section class="tech-stack-section" style="padding: var(--space-8) 0; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(0,0,0,0.2);">
+        <div class="container text-center">
+            <p style="color: var(--color-text-muted); text-transform: uppercase; font-size: var(--text-xs); letter-spacing: 0.1em; margin-bottom: var(--space-6);">Powering your workspace</p>
+            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: var(--space-8); opacity: 0.7;">
+                <i class="fa-brands fa-python fa-2x" title="Python 3.8+" style="color: #3776ab;" role="img" aria-label="Python"></i>
+                <i class="fa-solid fa-flask fa-2x" title="Flask" style="color: white;" role="img" aria-label="Flask"></i>
+                <i class="fa-brands fa-js fa-2x" title="Vanilla JavaScript" style="color: #f7df1e;" role="img" aria-label="JavaScript"></i>
+                <i class="fa-solid fa-database fa-2x" title="SQLite / JSON" style="color: #003B57;" role="img" aria-label="SQLite Database"></i>
+                <i class="fa-solid fa-bolt fa-2x" title="Socket.IO" style="color: white;" role="img" aria-label="Socket.IO"></i>
+                <i class="fa-brands fa-google fa-2x" title="Gemini AI" style="color: #4285F4;" role="img" aria-label="Google Gemini AI"></i>
+            </div>
         </div>
       </section>
 
@@ -376,41 +422,62 @@
                     <p class="section-desc">Built for those who want control.</p>
                 </div>
                 
-                <div class="glass-card" style="padding: var(--space-6); overflow-x: auto;">
-                    <table style="width: 100%; border-collapse: collapse; text-align: left; color: var(--color-text-secondary);">
+                <div class="glass-card comparison-wrapper">
+                    <table class="comparison-table">
                         <thead>
-                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-                                <th style="padding: var(--space-4); color: white;">Feature</th>
-                                <th style="padding: var(--space-4); color: var(--color-accent);">Zylo</th>
-                                <th style="padding: var(--space-4);">Discord</th>
-                                <th style="padding: var(--space-4);">Slack</th>
+                            <tr>
+                                <th>Feature</th>
+                                <th class="text-accent">Zylo</th>
+                                <th>Discord</th>
+                                <th>Slack</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-                                <td style="padding: var(--space-4); color: white;">Self-Hosted</td>
-                                <td style="padding: var(--space-4); color: var(--color-accent);"><i class="fa-solid fa-check"></i></td>
-                                <td style="padding: var(--space-4);"><i class="fa-solid fa-xmark"></i></td>
-                                <td style="padding: var(--space-4);"><i class="fa-solid fa-xmark"></i></td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-                                <td style="padding: var(--space-4); color: white;">Personal Cloud (500MB)</td>
-                                <td style="padding: var(--space-4); color: var(--color-accent);"><i class="fa-solid fa-check"></i></td>
-                                <td style="padding: var(--space-4);"><i class="fa-solid fa-xmark"></i></td>
-                                <td style="padding: var(--space-4);"><i class="fa-solid fa-xmark"></i></td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-                                <td style="padding: var(--space-4); color: white;">AI Integration</td>
-                                <td style="padding: var(--space-4); color: var(--color-accent);"><i class="fa-solid fa-check"></i> Built-in</td>
-                                <td style="padding: var(--space-4);">Bot required</td>
-                                <td style="padding: var(--space-4);">Add-on</td>
+                            <tr>
+                                <td class="feature-name">Self-Hosted</td>
+                                <td class="text-accent"><i class="fa-solid fa-check"></i></td>
+                                <td><i class="fa-solid fa-xmark"></i></td>
+                                <td><i class="fa-solid fa-xmark"></i></td>
                             </tr>
                             <tr>
-                                <td style="padding: var(--space-4); color: white;">Gamification (XP)</td>
-                                <td style="padding: var(--space-4); color: var(--color-accent);"><i class="fa-solid fa-check"></i></td>
-                                <td style="padding: var(--space-4);">Bot required</td>
-                                <td style="padding: var(--space-4);"><i class="fa-solid fa-xmark"></i></td>
+                                <td class="feature-name">Personal Cloud (500MB)</td>
+                                <td class="text-accent"><i class="fa-solid fa-check"></i></td>
+                                <td><i class="fa-solid fa-xmark"></i></td>
+                                <td><i class="fa-solid fa-xmark"></i></td>
                             </tr>
+                            <tr>
+                                <td class="feature-name">AI Integration</td>
+                                <td class="text-accent"><i class="fa-solid fa-check"></i> Built-in</td>
+                                <td>Bot required</td>
+                                <td>Add-on</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Gamification (XP)</td>
+                                <td class="text-accent"><i class="fa-solid fa-check"></i></td>
+                                <td>Bot required</td>
+                                <td><i class="fa-solid fa-xmark"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">No Subscriptions</td>
+                                <td class="text-accent"><i class="fa-solid fa-check"></i> Free Forever</td>
+                                <td>Nitro Required</td>
+                                <td>Paid Plans</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Full Customization</td>
+                                <td class="text-accent"><i class="fa-solid fa-check"></i> Open Source</td>
+                                <td>Client Mods (ToS Risk)</td>
+                                <td>Limited</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Ad-Free</td>
+                                <td class="text-accent"><i class="fa-solid fa-check"></i></td>
+                                <td>Promos/Upsell</td>
+                                <td><i class="fa-solid fa-check"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                         </tbody>
                     </table>
                 </div>
@@ -425,37 +492,49 @@
                 <div class="faq-grid" style="max-width: 800px; margin: 0 auto; display: grid; gap: var(--space-4);">
                     <!-- Item 1 -->
                     <div class="glass-card" style="padding: var(--space-4);">
-                        <h4 style="color: white; margin-bottom: var(--space-2);">Is Zylo completely free?</h4>
+                        <h4 style="color: var(--color-text-primary); margin-bottom: var(--space-2);">Is Zylo completely free?</h4>
                         <p style="color: var(--color-text-secondary);">Yes! Zylo is open source and free to use. You can host it yourself.</p>
                     </div>
                     <!-- Item 2 -->
                     <div class="glass-card" style="padding: var(--space-4);">
-                        <h4 style="color: white; margin-bottom: var(--space-2);">Does it work on Mobile?</h4>
+                        <h4 style="color: var(--color-text-primary); margin-bottom: var(--space-2);">Does it work on Mobile?</h4>
                         <p style="color: var(--color-text-secondary);">Yes, Zylo supports Pydroid 3 and Pyramid for mobile usage.</p>
                     </div>
                     <!-- Item 3 -->
                     <div class="glass-card" style="padding: var(--space-4);">
-                        <h4 style="color: white; margin-bottom: var(--space-2);">Where is data stored?</h4>
+                        <h4 style="color: var(--color-text-primary); margin-bottom: var(--space-2);">Where is data stored?</h4>
                         <p style="color: var(--color-text-secondary);">On your own server/machine. We do not track you or store your data.</p>
                     </div>
                     <!-- Item 4 -->
                     <div class="glass-card" style="padding: var(--space-4);">
-                        <h4 style="color: white; margin-bottom: var(--space-2);">How do I customize themes?</h4>
+                        <h4 style="color: var(--color-text-primary); margin-bottom: var(--space-2);">How do I customize themes?</h4>
                         <p style="color: var(--color-text-secondary);">Use the built-in theme editor or edit the CSS variables directly for advanced control.</p>
                     </div>
 
                     <!-- Hidden Items -->
                     <div class="glass-card faq-hidden" style="padding: var(--space-4);">
-                        <h4 style="color: white; margin-bottom: var(--space-2);">Is the AI processed locally?</h4>
+                        <h4 style="color: var(--color-text-primary); margin-bottom: var(--space-2);">Is the AI processed locally?</h4>
                         <p style="color: var(--color-text-secondary);">No, Gemini personas require an internet connection, but your chat logs remain on your server.</p>
                     </div>
                     <div class="glass-card faq-hidden" style="padding: var(--space-4);">
-                        <h4 style="color: white; margin-bottom: var(--space-2);">Can I create my own bots?</h4>
+                        <h4 style="color: var(--color-text-primary); margin-bottom: var(--space-2);">Can I create my own bots?</h4>
                         <p style="color: var(--color-text-secondary);">Yes, the API allows for custom bot integrations and automated workflows.</p>
                     </div>
                     <div class="glass-card faq-hidden" style="padding: var(--space-4);">
-                        <h4 style="color: white; margin-bottom: var(--space-2);">Is it secure?</h4>
+                        <h4 style="color: var(--color-text-primary); margin-bottom: var(--space-2);">Is it secure?</h4>
                         <p style="color: var(--color-text-secondary);">Zylo uses local-first architecture and encrypted sessions for maximum security.</p>
+                    </div>
+                    <div class="glass-card faq-hidden" style="padding: var(--space-4);">
+                        <h4 style="color: var(--color-text-primary); margin-bottom: var(--space-2);">How do I backup my data?</h4>
+                        <p style="color: var(--color-text-secondary);">Simply copy the `data/` folder from your installation directory to a safe location.</p>
+                    </div>
+                    <div class="glass-card faq-hidden" style="padding: var(--space-4);">
+                        <h4 style="color: var(--color-text-primary); margin-bottom: var(--space-2);">Is there a Docker container?</h4>
+                        <p style="color: var(--color-text-secondary);">Yes, an official Docker image is available for easy deployment on casual servers or NAS.</p>
+                    </div>
+                    <div class="glass-card faq-hidden" style="padding: var(--space-4);">
+                        <h4 style="color: var(--color-text-primary); margin-bottom: var(--space-2);">How do I update?</h4>
+                        <p style="color: var(--color-text-secondary);">Run `git pull` in your terminal and restart the application. Database migrations are automatic.</p>
                     </div>
                 </div>
 
@@ -471,22 +550,19 @@
         <div class="container">
           <div class="cta-card glass-card">
             <div class="cta-content">
-              <h2>Ready to launch ?</h2>
+              <h2>Ready to launch?</h2>
               <p>Open source, free forever, and built for performance.</p>
-              <div class="code-block">
+            <div class="code-block">
               <div class="code-content">
                 <code id="typewriter-text"></code><span class="cursor">|</span>
               </div>
-                <button class="copy-btn" aria-label="Copy install command">
-                  <i class="fa-regular fa-copy"></i>
-                </button>
-              </div>
+            </div>
 
               <div class="cta-extras" style="margin-top: var(--space-6); display: flex; flex-direction: column; align-items: center; gap: var(--space-4);">
                   <div class="os-icons" style="display: flex; gap: var(--space-4); color: var(--color-text-muted); font-size: 1.5rem;">
-                      <i class="fa-brands fa-windows" title="Windows"></i>
-                      <i class="fa-brands fa-linux" title="Linux"></i>
-                      <i class="fa-brands fa-apple" title="macOS"></i>
+                      <i class="fa-brands fa-windows os-icon-trigger" data-os="windows" title="Windows" style="cursor: pointer; transition: color 0.3s; &:hover { color: var(--color-accent); }"></i>
+                      <i class="fa-brands fa-linux os-icon-trigger" data-os="linux" title="Linux" style="cursor: pointer; transition: color 0.3s; &:hover { color: var(--color-accent); }"></i>
+                      <i class="fa-brands fa-apple os-icon-trigger" data-os="mac" title="macOS" style="cursor: pointer; transition: color 0.3s; &:hover { color: var(--color-accent); }"></i>
                   </div>
                   <a href="documentation.html" class="btn btn-outline btn-sm">Read Documentation</a>
               </div>
@@ -500,18 +576,59 @@
     <footer class="site-footer">
       <div class="container">
         <div class="footer-bottom">
-          <p>&copy; 2026 Zylo. Built with ❤️ by Daniel.</p>
+          <div class="footer-text">
+              <span class="footer-copyright">&copy; 2026 Zylo.</span>
+              <span class="footer-credits">Built with ❤️ by <a href="https://github.com/D4niel-dev" target="_blank" rel="noopener">Daniel</a>.</span>
+          </div>
           <div class="footer-links">
             <a href="privacy.html">Privacy</a>
-            <span style="color: rgba(255,255,255,0.2);">|</span>
+            <span class="footer-separator">|</span>
             <a href="terms.html">Terms</a>
           </div>
         </div>
       </div>
     </footer>
 
+    <!-- OS Selection Modal -->
+    <div id="os-modal-overlay" class="os-modal-overlay">
+        <div class="os-modal glass-card">
+            <button class="close-modal-btn" aria-label="Close Modal"><i class="fa-solid fa-xmark"></i></button>
+            <h3>Choose your System</h3>
+            <p style="margin-bottom: var(--space-6); color: var(--color-text-secondary); font-size: 0.9em;">Select your operating system to get the correct installation command.</p>
+            
+            <div class="os-options">
+                <button class="os-btn active" data-os="windows">
+                    <i class="fa-brands fa-windows"></i>
+                    <span>Windows</span>
+                </button>
+                <button class="os-btn" data-os="mac">
+                    <i class="fa-brands fa-apple"></i>
+                    <span>macOS</span>
+                </button>
+                <button class="os-btn" data-os="linux">
+                    <i class="fa-brands fa-linux"></i>
+                    <span>Linux</span>
+                </button>
+            </div>
+
+            <div class="command-display">
+                <code id="modal-cmd" copyable="true">git clone https://github.com/D4niel-dev/Zylo-Beta-1.3.2; cd Zylo-Beta-1.3.2; pip install -r requirements.txt; python main.pyw</code>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="js/main.js" defer></script>
     <script src="js/animations.js" defer></script>
+    <script>
+      // Immediate theme application to prevent flash
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+
+      // Placeholder for Analytics
+      // console.log("Analytics initialized: Page View Recorded");
+    </script>
   </body>
 </html>
