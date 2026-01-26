@@ -54,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
     // Slideshow Logic
-    // Slideshow Logic
     const slides = document.querySelectorAll('.slide');
     const indicators = document.querySelectorAll('.indicator');
     const captionEl = document.querySelector('.slideshow-caption');
