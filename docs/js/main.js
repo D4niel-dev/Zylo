@@ -126,9 +126,9 @@ if ('serviceWorker' in navigator) {
 const typeText = document.getElementById('typewriter-text');
 if (typeText) {
     const commands = [
-        { os: 'Windows', prompt: 'C:\\> ', cmd: 'git clone https://github.com/D4niel-dev/Zylo-Beta-1.3.2' },
-        { os: 'Linux', prompt: '$ ', cmd: 'git clone https://github.com/D4niel-dev/Zylo-Beta-1.3.2' },
-        { os: 'Mac', prompt: '% ', cmd: 'git clone https://github.com/D4niel-dev/Zylo-Beta-1.3.2' }
+        { os: 'Windows', prompt: 'C:\\> ', cmd: 'git clone https://github.com/D4niel-dev/Zylo-Beta-1.5.1' },
+        { os: 'Linux', prompt: '$ ', cmd: 'git clone https://github.com/D4niel-dev/Zylo-Beta-1.5.1' },
+        { os: 'Mac', prompt: '% ', cmd: 'git clone https://github.com/D4niel-dev/Zylo-Beta-1.5.1' }
     ];
     
     let cmdIndex = 0;
@@ -182,16 +182,16 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Commands
     const commands = {
-        windows: `git clone https://github.com/D4niel-dev/Zylo-Beta-1.3.2
-cd Zylo-Beta-1.3.2
+        windows: `git clone https://github.com/D4niel-dev/Zylo-Beta-1.5.1
+cd Zylo-Beta-1.5.1
 pip install -r requirements.txt
 python main.pyw`,
-        mac: `git clone https://github.com/D4niel-dev/Zylo-Beta-1.3.2
-cd Zylo-Beta-1.3.2
+        mac: `git clone https://github.com/D4niel-dev/Zylo-Beta-1.5.1
+cd Zylo-Beta-1.5.1
 pip install -r requirements.txt
 python3 main.pyw`,
-        linux: `git clone https://github.com/D4niel-dev/Zylo-Beta-1.3.2
-cd Zylo-Beta-1.3.2
+        linux: `git clone https://github.com/D4niel-dev/Zylo-Beta-1.5.1
+cd Zylo-Beta-1.5.1
 pip install -r requirements.txt
 python3 main.pyw`
     };

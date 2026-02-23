@@ -59,10 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const indicators = document.querySelectorAll('.indicator');
     const captionEl = document.querySelector('.slideshow-caption');
     const captions = [
-        "Community Chat", 
+        "Community Chat",
+        "Friends List",
         "Moments Feed", 
         "User Profile", 
-        "My Cloud"
+        "My Cloud",
+        "Deep Customization"
     ];
 
     if (slides.length > 0) {

@@ -143,6 +143,7 @@
 }
 
 .hero-title {
+  font-family: var(--font-display);
   font-size: 4.5rem; /* Large display size */
   line-height: 1.1;
   font-weight: 800;
@@ -295,6 +296,7 @@
 }
 
 .section-title {
+  font-family: var(--font-display);
   font-size: var(--text-4xl);
   font-weight: 700;
   margin-bottom: var(--space-4);
@@ -650,6 +652,7 @@
 }
 
 .display-text {
+  font-family: var(--font-display);
   font-size: var(--text-5xl);
   font-weight: 800;
   margin-bottom: var(--space-2);
@@ -979,4 +982,30 @@
 [data-theme="light"] .os-btn:hover, 
 [data-theme="light"] .os-btn.active {
   background: #f8fafc;
+}
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  .app-mockup {
+    margin-top: var(--space-8);
+  }
+  .bento-card-lg,
+  .bento-card-md {
+    grid-column: span 12;
+  }
+  .os-modal {
+    width: 95%;
+    padding: var(--space-4);
+  }
+  .os-options {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .command-display {
+    padding: var(--space-2);
+  }
+  .command-display code {
+    font-size: var(--text-xs);
+  }
 }
